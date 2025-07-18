@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Handlee&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Handlee", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+.container {
+  width: 100%;
+  height: 100vh;
+  background-color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+}
+.container h1 {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  color: #ffffff;
+  background-color: rgb(30, 30, 30);
+}
+.lists {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+
+  background-color: rgb(58, 58, 58);
+}
+.lists > .todo-list {
+  color: #ffffff;
+  font-size: 20px;
+  background-color: rgb(30, 30, 30);
+  border-radius: 10px;
+}
+.todo-list li {
+  margin-left: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.todo-list li button {
+  margin-left: 20px;
+  padding: 5px;
+  background-color: rgb(255, 0, 0);
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+.todo-list li button svg {
+  width: 15px;
+  height: 15px;
+  fill: #ffffff;
+}
+.add-btn svg {
+  width: 40px;
+  height: 40px;
+  fill: #cdcdcd;
+  padding: 3px;
+  background-color: red;
+  cursor: pointer;
+  border-radius: 10px;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+}
+.create-list {
+  width: 500px;
+  height: 130px;
+  background-color: rgb(60, 59, 59);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  z-index: 100;
+}
+.create-list > textarea {
+  width: 100%;
+  height: 50px;
+  background-color: rgb(82, 82, 82);
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+}
+.create-list > .list-btn {
+  position: absolute;
+  bottom: 5px;
+  right: 20px;
+}
+.create-list > .button {
+  padding: 5px;
+  border-radius: 10px;
+  background-color: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.create-list > button svg {
+  width: 20px;
+  height: 20px;
+  transform: rotate(45deg);
+  fill: #ffffff;
+}
+.create-list > .cancel {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+button:active {
+  transform: scale(0.9);
+}
+.blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 50;
+}
+.hidden {
+  display: none;
+}

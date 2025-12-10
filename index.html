@@ -1,15 +1,94 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All C Programs</title>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        h2 {
+            color: #007bff;
+            margin-top: 30px;
+        }
+        .code-box {
+            background-color: #222;
+            color: #00ff9d;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            white-space: pre;
+        }
+    </style>
 </head>
 <body>
 
 <h1>All C Programs</h1>
 
 <!-- PROGRAM 1 -->
-<h2>1) Pattern Printing Program</h2>
-<pre>
+<h2>1) Largest Number in Array</h2>
+<div class="code-box">
+#include<stdio.h>
+void main()
+{
+    int n,i,a[100],large;
+    printf("Enter the number of elements:");
+    scanf("%d",&n);
+
+    for(i=0;i<=n-1;i++) 
+    {
+        printf("Enter a value:");
+        scanf("%d",&a[i]);
+    }
+
+    large=a[0];
+
+    for(i=1;i<=n-1;i++)
+    {
+        if(large<a[i])
+            large=a[i];
+    }
+
+    printf("The largest number is %d",large);
+}
+</div>
+
+<!-- PROGRAM 2 -->
+<h2>2) Sum of Digits</h2>
+<div class="code-box">
+#include &lt;stdio.h&gt;
+
+int sum_of_digits(int n);
+
+int main() {
+    int number, sum;
+    printf("Enter a positive integer: ");
+    scanf("%d", &number);
+    sum = sum_of_digits(number);
+    printf("The sum of the digits of %d is: %d\n", number, sum);
+    return 0;
+}
+
+int sum_of_digits(int n) {
+    int sum = 0, remainder;
+    while (n != 0) {
+        remainder = n % 10;
+        sum += remainder;
+        n /= 10;
+    }
+    return sum;
+}
+</div>
+
+<!-- PROGRAM 3 -->
+<h2>3) Pattern Printing</h2>
+<div class="code-box">
 #include &lt;stdio.h&gt;
 int main()
 {
@@ -19,41 +98,70 @@ int main()
         for(j=1;j<=i; j++)
         {
             printf("%d",i);
-            printf(" "); // for single space “/t” for 3 spaces
+            printf(" ");
         }
         printf("\n");
     }
     return 0;
 }
-</pre>
+</div>
 
-<!-- PROGRAM 2 -->
-<h2>2) Factorial of a Number</h2>
-<pre>
+<!-- PROGRAM 4 -->
+<h2>4) Prime Number Check</h2>
+<div class="code-box">
 #include &lt;stdio.h&gt;
+
+int isPrime(int n)
+{
+    for (int i = 2; i < n; i++)
+    {
+        if (n % i == 0) 
+            return 0;
+    }
+    return 1;
+}
+
+void main() 
+{
+    int n,p;
+    printf("Enter any number:");
+    scanf("%d",&n);
+    p=isPrime(n);
+    if (p==0)
+        printf("%d is not prime", n);
+    else
+        printf("%d is prime", n);
+}
+</div>
+
+<!-- PROGRAM 5 -->
+<h2>5) Factorial Using Recursion</h2>
+<div class="code-box">
+#include &lt;stdio.h&gt;
+
 int factorial(int n) 
 {
-    int fact = 1; // Initialize factorial result to 1
-    for (int i = 1; i <= n; i++)
-    {
-        fact *= i; // Multiply fact by i in each iteration
-    }
-    return fact;
+    if (n == 0 || n == 1)
+        return 1;
+    else
+        return n * factorial(n - 1); 
 }
+
 int main() 
 {
     int num;
     printf("Enter a number: ");
     scanf("%d", &num); 
-    printf("Factorial of %d is: %d", num, factorial(num));
+    printf("Factorial of %d is: %d\n", num, factorial(num));
     return 0;
 }
-</pre>
+</div>
 
-<!-- PROGRAM 3 -->
-<h2>3) Reverse Number and Sum of Digits</h2>
-<pre>
+<!-- PROGRAM 6 -->
+<h2>6) Reverse Number & Digit Sum</h2>
+<div class="code-box">
 #include &lt;stdio.h&gt;
+
 int reverseNum(int num)
 {
     int sum = 1, rem;
@@ -65,6 +173,7 @@ int reverseNum(int num)
     }
     return sum;
 }
+
 int digitSum(int num)
 {
     int sum = 0, rem;
@@ -76,6 +185,7 @@ int digitSum(int num)
     }
     return sum;
 }
+
 int main()
 {
     int n;
@@ -85,17 +195,72 @@ int main()
     printf("Sum of Digits is : %d\n", digitSum(n));
     return 0;
 }
-</pre>
+</div>
 
-<!-- PROGRAM 4 -->
-<h2>4) Basic Arithmetic Operations</h2>
-<pre>
+<!-- PROGRAM 7 -->
+<h2>7) Swap Function (Call by Value)</h2>
+<div class="code-box">
+#include&lt;stdio.h&gt;
+void swap (int a, int b);
+
+void main()
+{
+    int a,b;
+    printf("Enter two numbers:");
+    scanf("%d %d",&a,&b);
+
+    printf("The values of a and b in main before swap: %d and %d\n",a,b);
+    swap(a,b);
+    printf("The values of a and b in main after swap: %d and %d\n",a,b);
+}
+
+void swap (int a, int b)
+{
+    int temp;
+    temp=a;
+    a=b;
+    b=temp;
+
+    printf("The values of a and b in swap function after swapping: %d and %d\n",a,b);
+}
+</div>
+
+<!-- PROGRAM 8 -->
+<h2>8) Factorial Using Loop</h2>
+<div class="code-box">
 #include &lt;stdio.h&gt;
+
+int factorial(int n) 
+{
+    int fact = 1;
+    for (int i = 1; i <= n; i++)
+    {
+        fact *= i;
+    }
+    return fact;
+}
+
+int main() 
+{
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num); 
+    printf("Factorial of %d is: %d", num, factorial(num));
+    return 0;
+}
+</div>
+
+<!-- PROGRAM 9 -->
+<h2>9) Basic Arithmetic Operations</h2>
+<div class="code-box">
+#include &lt;stdio.h&gt;
+
 void main()
 {
     int num1,num2;
     int add,diff,prod,rem;
     float division;
+
     printf("Enter first number:");
     scanf("%d",&num1);
     printf("Enter second number:");
@@ -113,12 +278,13 @@ void main()
     printf("\nDivision = %.2f",division);
     printf("\nRemainder = %d",rem);
 }
-</pre>
+</div>
 
-<!-- PROGRAM 5 -->
-<h2>5) Even or Odd Program</h2>
-<pre>
+<!-- PROGRAM 10 -->
+<h2>10) Even or Odd Program</h2>
+<div class="code-box">
 #include&lt;stdio.h&gt;
+
 void main()
 {
     int num;
@@ -130,7 +296,7 @@ void main()
     else
         printf("%d is odd.",num);
 }
-</pre>
+</div>
 
 </body>
         </html>

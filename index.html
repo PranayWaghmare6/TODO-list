@@ -1,34 +1,136 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="list.png" type="image/x-icon">
-    <title>TO DO LIST</title>
+    <title>All C Programs</title>
 </head>
 <body>
-    <div class="container">
-        <div class="blur" hidden >
 
-        </div>
-        <div class="create-list" hidden>
-            <button class="cancel button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"/></svg></button>
-            <label for="newlist">Enter your task:</label>
-            <textarea name="new-list" id="newlist"></textarea>
-            <button class="list-btn button">Create</button>
-        </div>
-        <h1>Make your Todo list !</h1>
-        <div class="lists">
+<h1>All C Programs</h1>
 
-            <ol class="todo-list">
-                
-                
-                
-            </ol>
-            <div class="add-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"/></svg></div>
-        </div>
-    </div>
-    <script src="script.js"></script>
+<!-- PROGRAM 1 -->
+<h2>1) Pattern Printing Program</h2>
+<pre>
+#include &lt;stdio.h&gt;
+int main()
+{
+    int i, j;
+    for(i=1;i<=3;i++)
+    {
+        for(j=1;j<=i; j++)
+        {
+            printf("%d",i);
+            printf(" "); // for single space “/t” for 3 spaces
+        }
+        printf("\n");
+    }
+    return 0;
+}
+</pre>
+
+<!-- PROGRAM 2 -->
+<h2>2) Factorial of a Number</h2>
+<pre>
+#include &lt;stdio.h&gt;
+int factorial(int n) 
+{
+    int fact = 1; // Initialize factorial result to 1
+    for (int i = 1; i <= n; i++)
+    {
+        fact *= i; // Multiply fact by i in each iteration
+    }
+    return fact;
+}
+int main() 
+{
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num); 
+    printf("Factorial of %d is: %d", num, factorial(num));
+    return 0;
+}
+</pre>
+
+<!-- PROGRAM 3 -->
+<h2>3) Reverse Number and Sum of Digits</h2>
+<pre>
+#include &lt;stdio.h&gt;
+int reverseNum(int num)
+{
+    int sum = 1, rem;
+    while (num > 0) 
+    {
+        rem = num % 10;
+        sum = (sum * 10) + rem;
+        num = num / 10;
+    }
+    return sum;
+}
+int digitSum(int num)
+{
+    int sum = 0, rem;
+    while (num > 0) 
+    {
+        rem = num % 10;
+        sum = sum + rem;
+        num = num / 10;
+    }
+    return sum;
+}
+int main()
+{
+    int n;
+    printf("Enter an integer number : ");
+    scanf("%d", &n);
+    printf("Reverse Number is : %d\n", reverseNum(n));
+    printf("Sum of Digits is : %d\n", digitSum(n));
+    return 0;
+}
+</pre>
+
+<!-- PROGRAM 4 -->
+<h2>4) Basic Arithmetic Operations</h2>
+<pre>
+#include &lt;stdio.h&gt;
+void main()
+{
+    int num1,num2;
+    int add,diff,prod,rem;
+    float division;
+    printf("Enter first number:");
+    scanf("%d",&num1);
+    printf("Enter second number:");
+    scanf("%d",&num2);
+
+    add=num1+num2;
+    diff=num1-num2;
+    prod=num1*num2;
+    division=(float)num1/num2;
+    rem=num1%num2;
+
+    printf("Addition = %d",add);
+    printf("\nSubtraction = %d",diff);
+    printf("\nMultiplication = %d",prod);
+    printf("\nDivision = %.2f",division);
+    printf("\nRemainder = %d",rem);
+}
+</pre>
+
+<!-- PROGRAM 5 -->
+<h2>5) Even or Odd Program</h2>
+<pre>
+#include&lt;stdio.h&gt;
+void main()
+{
+    int num;
+    printf("Enter an integer:");
+    scanf("%d",&num);
+
+    if(num%2 == 0)
+        printf("%d is even.",num);
+    else
+        printf("%d is odd.",num);
+}
+</pre>
+
 </body>
-</html>
+        </html>
